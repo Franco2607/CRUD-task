@@ -1,6 +1,16 @@
+import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm';
+
+@Entity('tasks')
 export class Task {
-    id?: number;
-    title?: string;
-    description?: string;
-    iscompleted?: boolean;
+  @PrimaryGeneratedColumn()
+  id: number;
+
+  @Column()
+  title: string;
+
+  @Column('text')
+  description: string;
+
+  @Column({ default: false })
+  iscompleted: boolean;
 }
