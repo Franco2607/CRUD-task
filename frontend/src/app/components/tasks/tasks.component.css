@@ -1,0 +1,74 @@
+/* Aca van los estilos del componente tasks */
+
+/* Contenedor principal */
+.task-container {
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: sans-serif;
+    padding: 20px;
+  }
+  
+  /* Sección del formulario */
+  .form-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #ffffff;
+  }
+  
+  /* Inputs de texto */
+  .form-input {
+    display: block;
+    margin-bottom: 10px;
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box; /* Evita que el padding rompa el ancho */
+    border: 1px solid #aaa;
+    border-radius: 4px;
+  }
+  
+  /* Botones */
+  .btn-primary {
+    padding: 10px 15px;
+    background: #005b9f;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+  
+  .btn-primary:hover {
+    background: #004275;
+  }
+  
+  .btn-danger {
+    background: #d32f2f;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-danger:hover {
+    background: #b71c1c;
+  }
+  
+  /* Tarjeta de cada tarea */
+  .task-card {
+    border-left: 4px solid #005b9f;
+    padding: 10px;
+    margin-bottom: 10px;
+    background: #f9f9f9;
+    border-radius: 0 4px 4px 0;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
+  .empty-message {
+    text-align: center;
+    color: #888;
+    font-style: italic;
+    margin-top: 20px;
+  }

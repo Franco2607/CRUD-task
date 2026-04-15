@@ -1,0 +1,42 @@
+<div class="task-container">
+    <h2>Mi Gestor de Tareas Fullstack</h2>
+  
+    <div class="form-section">
+      <h3>Agregar nueva tarea</h3>
+      <input type="text" class="form-input" placeholder="Título de la tarea..." [(ngModel)]="newTaskTitle" />
+      <input type="text" class="form-input" placeholder="Descripción..." [(ngModel)]="newTaskDescription" />
+      <button class="btn-primary" (click)="addTask()">Guardar Tarea</button>
+    </div>
+  
+    <hr>
+  
+    <div>
+      <div *ngFor="let task of tasks" class="task-card" [ngClass]="{'completed-task': task.iscompleted}">
+        
+        <div *ngIf="editingTaskId !== task.id">
+          <label class="checkbox-container">
+            <input type="checkbox" [checked]="task.iscompleted" (change)="toggleCompletion(task)">
+            <strong>{{ task.title }}</strong>
+          </label>
+          
+          <p style="margin: 5px 0 10px 0; color: #555;">{{ task.description }}</p>
+          
+          <button class="btn-secondary" (click)="startEdit(task)">Editar</button>
+          <button class="btn-danger" (click)="deleteTask(task.id)" style="margin-left: 10px;">Eliminar</button>
+        </div>
+  
+        <div *ngIf="editingTaskId === task.id">
+          <input type="text" class="form-input" [(ngModel)]="editingTaskTitle" />
+          <input type="text" class="form-input" [(ngModel)]="editingTaskDescription" />
+          
+          <button class="btn-success" (click)="saveEdit(task)">Guardar</button>
+          <button class="btn-secondary" (click)="cancelEdit()" style="margin-left: 10px;">Cancelar</button>
+        </div>
+  
+      </div>
+    </div>
+  
+    <div *ngIf="tasks.length === 0" class="empty-message">
+      <p>No tienes tareas pendientes. ¡Todo al día!</p>
+    </div>
+  </div>
